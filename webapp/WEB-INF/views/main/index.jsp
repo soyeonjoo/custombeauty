@@ -17,12 +17,11 @@
 <title>Beauty-Line</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="/beautyline/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/custombeauty/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="/beautyline/bootstrap/css/business-casual.css" rel="stylesheet">
-<link href="beautyline/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="/beautyline/beautyline/css/include.css" rel="stylesheet">
+<link href="/custombeauty/bootstrap/css/business-casual.css" rel="stylesheet">
+<link href="/custombeauty/beautyline/css/include.css" rel="stylesheet">
 
 <!-- Fonts -->
 <link 	href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
