@@ -72,7 +72,7 @@
                <hr>
             </div>
             
-            <form class="form-horizontal"  name="loginform" method="post" action="/beautyline/user/login">
+            <form class="form-horizontal"  name="loginform" method="post" action="/custombeauty/user/login">
    
    
                <div class="form-group">
@@ -129,14 +129,31 @@
  
  
  
-  <!-- Modal -->
+  
+  
+
+                  
+            </form>
+         </div>
+      </div>
+      <!-- <div class="clearfix"></div> -->
+   </div>
+   </div>
+
+   <!-- footer -->
+   <c:import url="/WEB-INF/views/include/footer.jsp" />
+
+
+
+
+<!-- Modal -->
   <div class="modal fade" id="myModal3" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
     
       <!-- Modal content-->
      
       <div class="modal-content">
-      <form class="form-horizontal" id="idfind-form" name="idFindForm" method="post" action="/beautyline/user/idfind">
+      <form class="form-horizontal" id="idfind-form" name="idFindForm" method="post" action="/custombeauty/user/idfind">
     
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -180,18 +197,16 @@
        
     </div>
   </div>
-  
 
-                  
-            </form>
-         </div>
-      </div>
-      <!-- <div class="clearfix"></div> -->
-   </div>
-   </div>
 
-   <!-- footer -->
-   <c:import url="/WEB-INF/views/include/footer.jsp" />
+
+
+
+
+
+
+
+
 
 
    <script>
