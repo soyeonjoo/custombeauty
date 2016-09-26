@@ -26,7 +26,7 @@ public class UserController {
 	@Autowired
     private EmailSender emailSender;
 	
-	
+	//dddddd
 	
 	/* -- 회원가입  -- */	
 	
@@ -39,7 +39,7 @@ public class UserController {
 	@RequestMapping("/join")
 	public String join(@ModelAttribute UserVo vo) {//회원가입 버튼 누를 때
 		userService.join(vo);
-		return "redirect:/user/joinsuccess"; // redirect해야함
+		return "redirect:/main"; // redirect해야함
 	}
 	
 	@RequestMapping("/joinsuccess")

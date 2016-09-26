@@ -166,18 +166,18 @@
         
         <!-- 비밀번호 -->
         <div class="form-group">
-         <label class="col-sm-3 control-label" for="inputPassword">비밀번호</label>
+         <label class="col-sm-3 control-label" for="inputPassword">비밀번호*</label>
          <div class="col-sm-3">
           <input class="form-control" id="inputPassword" name="password" type="password" placeholder="비밀번호">
          </div>
          <div class="col-sm-3">
-       	  <h11 class="help-block" id="checkPw">영문, 숫자를 혼합하여 6~20자 이내</h11>
+       	  <h11 class="help-block" id="checkPw">특수문자,영문,숫자를 혼합하여 6~20자 이내</h11>
          </div>
         </div>
         
         <!-- 비밀번호확인 -->
          <div class="form-group">
-          <label class="col-sm-3 control-label" for="inputPasswordCheck">비밀번호 확인</label>
+          <label class="col-sm-3 control-label" for="inputPasswordCheck">비밀번호 확인*</label>
          <div class="col-sm-3">
           <input class="form-control" id="inputPasswordCheck" type="password" placeholder="비밀번호 확인">
            </div>
@@ -233,7 +233,7 @@
        
         <!-- 휴대폰 번호 -->
         <div class="form-group">
-            <label class="col-sm-3 control-label" for="inputNumber">휴대폰번호</label>
+            <label class="col-sm-3 control-label" for="inputNumber">휴대폰번호*</label>
               <div class="col-sm-3">
                 <input type="tel" class="form-control" name="phone" id="inputNumber" placeholder="- 없이 입력해 주세요" />
                  </div>
@@ -315,29 +315,64 @@ $(function(){ // 다썼는지 체크하기! 빠진 항목없는지..
 			$("#inputName").focus()
 			return false;
 		}
-		
-		 /* if($("#email").val()=="" ){
-			alert ("이메일은 필수 입력 항목입니다.");
-			$("#email").focus()
+		if($("#inputId").val()=="" ){
+			alert ("아이디는 필수 입력 항목입니다.");
+			$("#inputId").focus()
 			return false;
 		}
-	 	if($("#image-checked").is(":visible")==false ){
-			alert ("이메일 중복 체크를 해주세요.");
-			return false;
-		} */
-		if($("input[type='password']").val()=="" ){
+		if($("#inputPassword").val()=="" ){
 			alert ("비밀번호는 필수 입력 항목입니다.");
-			$("input[type='password']").focus()
+			$("#inputPassword").focus()
 			return false;
 		}
+		if($("#inputPasswordCheck").val()=="" ){
+			alert ("이메일은 필수 입력 항목입니다.");
+			$("#inputPasswordCheck").focus()
+			return false;
+		}
+		if($("#email1").val()=="" ){
+			alert ("이메일은 필수 입력 항목입니다.");
+			$("#email1").focus()
+			return false;
+		}
+		if($("#email2").val()=="" ){
+			alert ("이메일은 필수 입력 항목입니다.");
+			$("#email2").focus()
+			return false;
+		}
+		if($("#sample6_postcode").val()=="" ){
+			alert ("우편번호를 입력하세요.");
+			$("#sample6_postcode").focus()
+			return false;
+		}
+		if($("#address1").val()=="" ){
+			alert ("주소를 입력하세요.");
+			$("#address1").focus()
+			return false;
+		}
+		if($("#address2").val()=="" ){
+			alert ("상세주소를 입력하세요.");
+			$("#address2").focus()
+			return false;
+		}
+		if($("#inputNumber").val()=="" ){
+			alert ("전화번호를 입력하세요.");
+			$("#inputNumber").focus()
+			return false;
+		}
+		
+		
+		
 	 	/* if($("#agree-prov").is(":checked")==false ){
 			alert ("약관동의가 필요합니다.");
 			
 			return false;
 		} */  
 		
+		//아이디 중복체크했는지도!
+		alert ("회원가입에 성공하였습니다.");
 		 return true;
-		
+		 
 	});
 	
 	$("#email_select").change( function(){ //@뒤 이메일 자동으로 만들어주는것
