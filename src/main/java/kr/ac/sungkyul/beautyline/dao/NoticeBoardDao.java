@@ -13,22 +13,22 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.ac.sungkyul.beautyline.vo.BoardVo;
+import kr.ac.sungkyul.beautyline.vo.NoticeBoardVo;
 @Repository
-public class BoardDao {
+public class NoticeBoardDao {
 	
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public BoardVo get(Long no) {
+	public NoticeBoardVo get(Long no) {
 	
-		BoardVo vo = sqlSession.selectOne("board.getNo",no);
+		NoticeBoardVo vo = sqlSession.selectOne("board.getNo",no);
 			return vo;
 	}
 	
-	public List<BoardVo> getAll(String kwd) {
-		List<BoardVo> list = new ArrayList<BoardVo>();	
-		BoardVo vo = null;
+	public List<NoticeBoardVo> getAll(String kwd) {
+		List<NoticeBoardVo> list = new ArrayList<NoticeBoardVo>();	
+		NoticeBoardVo vo = null;
 		Connection connection = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -54,7 +54,7 @@ public class BoardDao {
 				Long no = rs.getLong(1);
 				
 				
-				vo =new BoardVo();
+				vo =new NoticeBoardVo();
 				vo.setNo(no);
 				list.add(vo);
 			}
@@ -88,12 +88,12 @@ public class BoardDao {
 	
 	
 	
-	public void viewcount(BoardVo vo) {
+	public void viewcount(NoticeBoardVo vo) {
 		sqlSession.update("board.viewcount", vo);
 	
 	}
-	public List<BoardVo> getList(Long pageNo, String kwd) {
-		List<BoardVo> list = new ArrayList<BoardVo>();	
+	public List<NoticeBoardVo> getList(Long pageNo, String kwd) {
+		List<NoticeBoardVo> list = new ArrayList<NoticeBoardVo>();	
 		PreparedStatement pstmt = null;
 		Connection connection = null;
 		ResultSet rs = null;
@@ -136,13 +136,13 @@ public class BoardDao {
 				Long userNo = rs.getLong(7);
 				
 				
-				BoardVo vo = new BoardVo();
+				NoticeBoardVo vo = new NoticeBoardVo();
 				vo.setNo(no);
 				vo.setTitle(title);
 				vo.setName(name);
 				vo.setContent(content);
 				vo.setRegDate(regDate);
-				vo.setViewNo(viewNo);
+				vo.setViewCount(viewNo);
 				vo.setUserNo(userNo);
 				
 				list.add(vo);
@@ -174,22 +174,22 @@ public class BoardDao {
 		return list;
 
 	}
-	
-	public void delete(BoardVo vo) {
+/*	
+	public void delete(NoticeBoardVo vo) {
 	sqlSession.delete("board.delete",vo);
-	}
+	}*/
 	
-	public boolean write(BoardVo vo) {
+	public boolean write(NoticeBoardVo vo) {
 		Connection connection = null;
 		PreparedStatement pstmt = null;
 		PreparedStatement pstmt2 = null;
 		int count= 0;
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+		//try {
+		/*	Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			connection = DriverManager.getConnection(url, "webdb", "webdb");
-			
-			if(vo.getGroupNo()!= null){//답글일때
+		*/	
+			/*if(vo.getGroupNo()!= null){//답글일때
 			//order_no
 			String orderSql = "update board set order_no=order_no+1 where group_no = ? and order_no > ?";
 			
@@ -251,13 +251,13 @@ public class BoardDao {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}
+		}*/
 
 		return (count==1);
 
 	}
-	
-	public void modify(BoardVo vo) {
+/*	
+	public void modify(NoticeBoardVo vo) {
 		sqlSession.update("board.modify",vo);
-	}
+	}*/
 }

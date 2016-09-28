@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import kr.ac.sungkyul.beautyline.vo.BoardVo;
+import kr.ac.sungkyul.beautyline.vo.NoticeBoardVo;
 @Controller
 @RequestMapping("/reserve")
 public class ReserveController {
@@ -27,7 +27,7 @@ public class ReserveController {
 	
 	//수정폼
 		@RequestMapping(value = "modifyForm", method = RequestMethod.GET)
-		public String modifyForm(BoardVo boardVo, Model model) {
+		public String modifyForm(NoticeBoardVo boardVo, Model model) {
 		//	boardVo = bbsService.selectBoard(boardVo);
 			System.out.println("modifyForm:  " + boardVo.toString());
 
