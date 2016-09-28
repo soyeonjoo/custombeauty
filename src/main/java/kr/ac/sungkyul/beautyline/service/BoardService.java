@@ -1,23 +1,15 @@
 package kr.ac.sungkyul.beautyline.service;
 
-import static java.lang.Math.toIntExact;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import kr.ac.sungkyul.beautyline.dao.BoardDao;
-import kr.ac.sungkyul.beautyline.vo.BoardVo;
 
 
 @Service
 public class BoardService {
-	@Autowired
-	private BoardDao boardDao;
+/*	@Autowired
+	private BoardDao boardDao;*/
 
 	public void list(String kwd, Long pageNo){
-		List<BoardVo> pageList = boardDao.getAll(kwd);
+/*		List<BoardVo> pageList = boardDao.getAll(kwd);
 		List<BoardVo> list = boardDao.getList(pageNo, kwd);
 	
 		int totalPage;
@@ -49,7 +41,7 @@ public class BoardService {
 			nextPage=false;
 		}else{
 			ePage = sPage+4;
-		}
+		}*/
 
 	/*	request.setAttribute("list", list);// 이름 지정과 객체
 		request.setAttribute("pageList", pageList);// 이름 지정과 객체
