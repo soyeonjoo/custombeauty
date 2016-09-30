@@ -11,16 +11,13 @@
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
     rel="stylesheet" type="text/css">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
     rel="stylesheet" type="text/css">
- 
 
-
-
-
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-pVJelSCJ58Og1XDc2E95RVYHZDPb9AVyXsI8NoVpB2xmtxoZKJePbMfE4mlXw7BJ" crossorigin="anonymous">
+ -->
 <title>noticeBoard</title>
 
 <meta charset="utf-8">
@@ -31,20 +28,17 @@
 
 
 <!-- Bootstrap Core CSS -->
-<link href="/custombeauty/bootstrap/css/bootstrap.min.css" 
-	rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="/custombeauty/bootstrap/css/business-casual.css"
-	rel="stylesheet">
+ <link href="/custombeauty/bootstrap/css/business-casual.css"
+	rel="stylesheet"> 
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
+
 <link href="/custombeauty/beautyline/css/include.css" rel="stylesheet">
 <!-- font awesome -->
-<link rel="stylesheet"
-	href="/custombeauty/bootstrap/css/font-awesome.min.css" media="screen"
-	title="no title">
+<link rel="stylesheet" href="/custombeauty/bootstrap/css/font-awesome.min.css" media="screen" title="no title">
 <!-- Custom style -->
-<link rel="stylesheet" href="/custombeauty/bootstrap/css/style.css"
-	media="screen" title="no title">
+<link rel="stylesheet" href="/custombeauty/bootstrap/css/style.css" media="screen" title="no title">
 
 <!-- Fonts -->
 <link
@@ -75,6 +69,16 @@
 	padding-left: 0px;
 } 
 </style>-->
+
+
+<style >
+#listTitle{
+width:50%;
+
+}
+
+
+</style>
 <script>
 
 
@@ -107,235 +111,62 @@
 						</h1>
 						<hr>
 					</div>
-					<a href="#" class="btn btn-lg btn-danger "><span class="glyphicon glyphicon-pencil"></span> </a>
+					<div class="col-lg-10 col-lg-offset-1">
 	         <table class="table table-bordered table-hover table-responsive">
-              <tbody>
-              <c:set var='totalCount' value='${fn:length(listUser) }' />
-						<c:forEach items="${listUser }" var="userinfoVo"
+              <tbody>      
+<%--               <c:set var='totalCount' value='${fn:length(listUser) }' /> --%>
+						<c:forEach items="${boarList }" var="NoticeBoardVo"
 							varStatus="status">
 							<tr>
-								<td>${totalCount - status.index }</td>
-								<td>${userinfoVo.no}</td>
-								<td>${userinfoVo.name}</td>
-								<td>${userinfoVo.phone}</td>
-								<td>${userinfoVo.id}</td>
-								<td>${userinfoVo.email}</td>
-								<td>${userinfoVo.address}</td>
-								<td>${userinfoVo.is_admin}</td>
-
-								<td>
-									<%-- <input type="hidden" name="no"
-									value="${userinfoVo.no }" /> <a class="btn btn-default"
-									href="couponview?no=${userinfoVo.no }" role="button">조회</a> --%>
-
-									<!-- 조회 클릭 --> <!-- Trigger the modal with a button --> <input
-									type="hidden" name="no" value="${CouponviewVo.userNo }" /> <a
-									class="btn btn-default" href="" id="couponview"
-									data-target="#myModal2" type="button" data-toggle="modal"
-									role="button">조회</a>
-								</td>
-
-								<td><input type="hidden" name="no"
-									value="${userinfoVo.no }" /> <a class="btn btn-default"
-									href="modifyuser?no=${userinfoVo.no }" role="button">수정</a></td>
-								<td><form method="post" action="delete">
-										<input type="hidden" name="no" value="${userinfoVo.no }" /> <input
-											type="submit" value="삭제">
-										<!-- <a class="btn btn-default" href = "javascript:del()">삭제</a> -->
-									</form></td>
+								
+								<td>${NoticeBoardVo.no}</td>
+								<td><a href="view?no=${NoticeBoardVo.no }">${NoticeBoardVo.title}</a></td>
+								<td>관리자</td>
+								<td>${NoticeBoardVo.regDate}</td>
+								<td>${NoticeBoardVo.viewCount}</td>
+						
 							</tr>
-						</c:forEach>
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>11</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>11</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>11</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>11</td>
-                </tr>
-             
+						</c:forEach>  
               </tbody>
               <thead>
                 <tr>
-                  <th class="danger text-center">no</th>
-                  <th class="danger">제목</th>
-                  <th class="danger">작성자</th>
-                  <th class="danger">등록일</th>
-                  <th class="danger">조회수</th>
+                  <th id="listNo" class="danger text-center">no</th>
+                  <th id="listTitle" class="danger">제목</th>
+                  <th id="listName" class="danger">작성자</th>
+                  <th id="listDate" class="danger">등록일</th>
+                  <th id="listCount" class="danger">조회수</th>
                 </tr>
               </thead>
             </table>
-       <a href="#" class="btn btn-sm btn-danger">글쓰기 <span class="glyphicon glyphicon-pencil"></span></a>
-      
+            </div>
+            <div class="col-lg-11 text-right">
+       <a href="writeform" class="btn btn-sm btn-danger">글쓰기 <span class="glyphicon glyphicon-pencil"></span></a>
+      </div>
    <!--  페이징 -->
-    <div class="section text-center">
-      <div class="container">
-        <div class="row">
+
+    
           <div class="col-md-12 text-center">
             <ul class="pagination pagination-sm">
               <li class="">
-                <a href="#">Prev</a>
+                <a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a>
               </li>
-              <li class="active">
-                <a href="#">1</a>
-              </li>
-              <li>
-                <a href="#">2</a>
-              </li>
-              <li>
-                <a href="#">3</a>
-              </li>
-              <li>
-                <a href="#">4</a>
-              </li>
-              <li>
-                <a href="#">5</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>
-              </li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
             </ul>
           </div>
-        </div>
-      </div>
-    </div>
-   
-					
+        	<div class="col-lg-11 text-right">
 			<a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span> </a>		
-				 </div>	
+				 </div>
+	</div>	
 	  </div>
       </div>				
 			   </div>		
 					
-					
-
-
- <!--   <div class="table-responsive">
-
-                
-              <table id="mytable" class="table table-bordred table-striped">
-                   
-                   <thead>
-                   
-                   <th><input type="checkbox" id="checkall" /></th>
-                   <th>Sales ID</th>
-                    <th>Name</th>
-                     <th>Email</th>
-                     <th>Designation</th>
-                     <th>Mobile Numberl</th>
-                      
-                      
-                       <th>Delete</th>
-                   </thead>
-    <tbody>
-    
-    <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
-    <td>Mohsin</td>
-    <td>Irshad</td>
-    <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-    <td>isometric.mohsin@gmail.com</td>
-    <td>+923335586757</td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
-    
- <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
-    <td>Mohsin</td>
-    <td>Irshad</td>
-    <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-    <td>isometric.mohsin@gmail.com</td>
-    <td>+923335586757</td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
-    
-    
- <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
-    <td>Mohsin</td>
-    <td>Irshad</td>
-    <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-    <td>isometric.mohsin@gmail.com</td>
-    <td>+923335586757</td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
-    
-    
-    
- <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
-    <td>Mohsin</td>
-    <td>Irshad</td>
-    <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-    <td>isometric.mohsin@gmail.com</td>
-    <td>+923335586757</td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
-    
-    
- <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
-    <td>Mohsin</td>
-    <td>Irshad</td>
-    <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-    <td>isometric.mohsin@gmail.com</td>
-    <td>+923335586757</td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
-    
-   
-    
-   
-    
-    </tbody>
-        
-</table>
-
-<div class="clearfix"></div>
-
-
-
+<!-- 					
 <ul class="pagination pull-center">
   <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
   <li class="active"><a href="#">1</a></li>
@@ -345,15 +176,15 @@
   <li><a href="#">5</a></li>
   <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
 </ul>
-                
-            </div>
-    -->         
+ -->
 
 
 
 
   
 
+
+	<c:import url="/WEB-INF/views/include/footer.jsp" />
 
 
 
@@ -421,23 +252,10 @@
     </div>
 					
 					
-					
-					
-</div>
-
-
-
-	<c:import url="/WEB-INF/views/include/footer.jsp" />
 
 
 
 
-
-
-
-
-	
-	<button id="qmyBtn">Click Here</button>
 </body>
 
 

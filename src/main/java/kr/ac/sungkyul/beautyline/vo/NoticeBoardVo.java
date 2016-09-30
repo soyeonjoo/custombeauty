@@ -8,6 +8,7 @@ public class NoticeBoardVo extends UserVo {
 	private Long viewCount;
 	private String userName;
 	private Long userNo;
+	private String category;
 	public Long getNo() {
 		return no;
 	}
@@ -50,12 +51,21 @@ public class NoticeBoardVo extends UserVo {
 	public void setUserNo(Long userNo) {
 		this.userNo = userNo;
 	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
 	@Override
 	public String toString() {
 		return "NoticeBoardVo [no=" + no + ", title=" + title + ", content=" + content + ", regDate=" + regDate
-				+ ", viewCount=" + viewCount + ", userName=" + userName + ", userNo=" + userNo + "]";
+				+ ", viewCount=" + viewCount + ", userName=" + userName + ", userNo=" + userNo + ", category="
+				+ category + "]";
 	}
 
+	
 	
 	
 	

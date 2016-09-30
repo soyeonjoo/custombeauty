@@ -16,13 +16,14 @@
 <meta name="author" content="">
 
 <!-- Bootstrap Core CSS -->
-<link href="/custombeauty/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- font awesome -->
     <link rel="stylesheet" href="/custombeauty/bootstrap/css/font-awesome.min.css" media="screen" title="no title" >
    
     <!-- Custom CSS -->
     <link href="/custombeauty/bootstrap/css/business-casual.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
+    
    <link href="/custombeauty/beautyline/css/include.css" rel="stylesheet">
     <!-- Custom style -->
     <link rel="stylesheet" href="/custombeauty/bootstrap/css/style.css" media="screen" title="no title" >
@@ -31,7 +32,8 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
-
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
+	
 
 
 <style type="text/css">
