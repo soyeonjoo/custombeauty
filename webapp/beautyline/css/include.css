@@ -1,50 +1,51 @@
-#includeheader {
-   height:30px;
-   margin: 0 auto;
-   
-}
+#userli {
+   color: #333;
 
-#includeheader li {
+}
+#includeheader ul{
+   height:20px; 
+   margin:0 20px 10px 0 ;
+}
+#includeheader ul li{
    list-style: none; 
-
+   float: left;
 }
-
-#includeheader {
-   height:30px;
-   margin: 10px auto;
-   
-}
-
-#includeheader li {
-   list-style: none; 
-    color: white;
-    float: right;
-    margin: 10px;
-}
-
-#includeheader ul li a {
-   color: white;
-   margin: 5px;
-   padding: 10px;
+#includeheader ul li a{
+   color:#4F4F4F; 
+   font-weight:bold; 
+   margin-left:10px; 
+   text-decoration:none;
 }
 .brand {
    color: black;
+   text-shadow: none;
+    font-family: sans-serif;
+   
 }
-
 body {
-	background: none;
-	background-color: none;
+   background: none;
+   background-color: none;
 }
 
 .box {
-	background-color: #F7F7F7;
+   background-color: #F7F7F7;
 }
 hr {
-	border-color: #3E3F3A;
+   border-color: #3E3F3A;
 }
 #footerText{
-	background-color: #2C3E50;	
+   background-color: #2C3E50;   
 }
 #footerText p{
-	color: #F7F7F7;
+   color: #F7F7F7;
+}
+#reservejoin{
+   padding: 20px;
+}
+.navbar-nav {
+    display: table;
+    float: none;
+    margin: 0 auto;
+    table-layout: fixed;
+    font-size: 1.25em;
 }

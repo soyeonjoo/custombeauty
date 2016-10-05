@@ -1,4 +1,4 @@
-
+<%-- 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -97,10 +97,10 @@
 					
 				<!-- <c:if test='${not empty authUser && (boardVo.userNo == authUser.no) }'> -->	
 					<a href="#" class="btn btn-sm btn-danger">수정하기 <span class="glyphicon glyphicon-edit"></span></a>
-					<%-- <a href="/mysite/bs?a=modifyform&no=${boardVo.no }">글수정</a> --%>
+					<a href="/mysite/bs?a=modifyform&no=${boardVo.no }">글수정</a>
 					<a href="#" class="btn btn-sm btn-danger">삭제 <span class="glyphicon glyphicon-remove"></span></a>
-					<%-- <a href="/mysite/bs?a=replyform&no=${boardVo.no }">삭제</a> 
-					</c:if>--%>
+					<a href="/mysite/bs?a=replyform&no=${boardVo.no }">삭제</a> 
+					</c:if>
 					
 				</div>
 			</div>
@@ -132,4 +132,4 @@
 
 
 
-</html>
+</html> --%>

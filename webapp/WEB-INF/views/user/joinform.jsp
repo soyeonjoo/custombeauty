@@ -16,46 +16,26 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+  <!-- Bootstrap Core CSS -->
 
-<!-- Bootstrap Core CSS -->
-
+	<!-- Custom CSS -->
+	<link href="/custombeauty/bootstrap/css/business-casual.css" rel="stylesheet">
+   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
+   <link href="/custombeauty/beautyline/css/include.css" rel="stylesheet">
+   <!-- font awesome -->
+    <link rel="stylesheet" href="/custombeauty/bootstrap/css/font-awesome.min.css" media="screen" title="no title" >
+    <!-- Custom style -->
+    <link rel="stylesheet" href="/custombeauty/bootstrap/css/style.css" media="screen" title="no title" >
+	
+  <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 	
 
-<!-- Custom CSS -->
-<link href="/custombeauty/bootstrap/css/business-casual.css"
-	rel="stylesheet">
-	
-
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-pVJelSCJ58Og1XDc2E95RVYHZDPb9AVyXsI8NoVpB2xmtxoZKJePbMfE4mlXw7BJ" crossorigin="anonymous">
-	
-<link href="/custombeauty/beautyline/css/include.css" rel="stylesheet">
-		
-<!-- font awesome -->
-<link rel="stylesheet"
-	href="/custombeauty/bootstrap/css/font-awesome.min.css" media="screen"
-	title="no title">
-	
-	
-<!-- Custom style -->
-<link rel="stylesheet" href="/custombeauty/bootstrap/css/style.css"
-	media="screen" title="no title">
-
-<!-- Fonts -->
-<link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
-	rel="stylesheet" type="text/css">
-
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script type="text/javascript"
-	src="/custombeauty/bootstrap/js/jquery.js"></script>
+<script type="text/javascript" src="/custombeauty/bootstrap/js/jquery.js"></script>
 <style type="text/css">
 .col-sm-3, .col-sm-2 {
 	padding-right: 0px;
@@ -63,6 +43,11 @@
 
 #btn {
 	padding-left: 0px;
+}
+#dat_div{
+	
+	padding-right: 0px;
+	width:10px;
 }
 </style>
 <script>
@@ -158,8 +143,7 @@
 
 
 					<!-- ////////////////////////회원가입 폼시작///////////////////////////////////// -->
-					<form class="form-horizontal" id="join-form" name="joinform"
-						method="post" action="/custombeauty/user/join">
+					<form class="form-horizontal" id="join-form" >
 
 						<!-- 이름 -->
 						<div class="form-group" id="divName">
@@ -179,6 +163,7 @@
 									name="id" type="text" placeholder="아이디">
 							</div>
 							<span class="input-group-btn">
+							    <input type="hidden" id="conCheckId" value="0">
 								<button class="btn btn-success" id="checkId" type="button">
 									중복 확인<i class="fa fa-edit spaceLeft"></i>
 								</button>
@@ -204,8 +189,7 @@
 							<label class="col-sm-3 control-label" for="inputPasswordCheck">비밀번호
 								확인*</label>
 							<div class="col-sm-3">
-								<input class="form-control" id="inputPasswordCheck"
-									type="password" placeholder="비밀번호 확인">
+								<input class="form-control" id="inputPasswordCheck" type="password" placeholder="비밀번호 확인">
 							</div>
 							<div class="col-sm-3">
 								<h11 class="help-block" id="oneMore">비밀번호를 한번 더 입력해주세요.</h11>
@@ -218,16 +202,18 @@
 						<div class="form-group" id="divEmail">
 							<label class="col-sm-3 control-label" for="inputEmail">이메일*</label>
 							<div class="col-sm-2">
-								<input class="form-control" name="email1" id="inputEmail1"
-									type="text">
+						
+								<input class="form-control" id="inputEmail1" type="text">
 							</div>
-							<div class="col-sm-2">
-								<input class="form-control" name="email2" id="inputEmail2"
-									type="text">
+							<span class="col-sm-1" id="dat_div">
+							<label class="control-label" >@</label>
+							
+						</span>
+							<div class="col-sm-2" id="inputEmail2_div">
+								<input class="form-control" id="inputEmail2" type="text">
 							</div>
-							<div class="col-sm-2">
-								<select class="form-control" name="email_select"
-									id="email_select">
+					 	 	<div class="col-sm-2" id="email_select_div">
+								<select class="form-control" name="email_select" id="email_select">
 									<option value="" selected>선택하세요</option>
 									<option value="naver.com">naver.com</option>
 									<option value="hotmail.com">hotmail.com</option>
@@ -235,7 +221,7 @@
 									<option value="yahoo.co.kr">yahoo.co.kr</option>
 									<option value="1">직접입력</option>
 								</select>
-							</div>
+							</div> 
 						</div>
 						<br>
 
@@ -245,22 +231,18 @@
 						<div class="form-group" id="divAddress">
 							<label class="col-sm-3 control-label">주소*</label>
 							<div class="col-sm-2">
-								<input class="form-control" type="text" name="zipCode"
-									id="sample6_postcode" placeholder="우편번호">
+								<input class="form-control" type="text" name="zipCode" id="sample6_postcode" placeholder="우편번호">
 							</div>
 							<span class="input-group-btn"> <input
-								class="btn btn-success" type="button"
-								onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+								class="btn btn-success" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
 							</span>
 							<div class="col-sm-12 col-sm-offset-3">
 								<div class="row">
 									<div class="col-sm-4">
-										<input class="form-control" name="address1" type="text"
-											id="sample6_address" placeholder="주소">
+										<input class="form-control"  type="text" id="sample6_address" placeholder="주소">
 									</div>
 									<div class="col-sm-2">
-										<input class="form-control" name="address2" type="text"
-											id="sample6_address2" placeholder="상세주소">
+										<input class="form-control"  type="text" id="sample6_address2" placeholder="상세주소">
 									</div>
 								</div>
 							</div>
@@ -271,14 +253,13 @@
 						<div class="form-group" id="divNumber">
 							<label class="col-sm-3 control-label" for="inputNumber">휴대폰번호*</label>
 							<div class="col-sm-3">
-								<input type="tel" class="form-control onlyNumber" name="phone"
-									id="inputNumber" placeholder="- 없이 입력해 주세요" />
+								<input type="text" class="form-control onlyNumber" name="phone" id="inputNumber" placeholder="- 없이 입력해 주세요" />
 							</div>
-							<span class="input-group-btn">
-								<button class="btn btn-success">
+							<div class="col-sm-2" id="btn" >
+								<button class="btn btn-success" type="button">
 									인증번호 전송<i class="fa fa-mail-forward spaceLeft"></i>
 								</button>
-							</span>
+							</div>
 						</div>
 						<br>
 
@@ -304,24 +285,31 @@
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label" for="inputEmailReceiveYn" >이메일 수신여부</label>
-							<div class="col-sm-4">
-								<label class="radio-inline">
-								<input type="radio" id="emailReceiveYn" name="emailReceiveYn" value="Y" checked> 동의합니다.
-								</label>
-								<label class="radio-inline">
-								<input type="radio" id="emailReceiveYn" name="emailReceiveYn" value="N">동의하지 않습니다.
-								</label>
+							<div class="col-sm-4" data-toggle="buttons">
+								<label class="btn btn-info active">
+								<input type="radio" class="emailReceiveYn" name="emailReceiveYn" value="Y" autocomplete="off" >
+								<span class="fa fa-check"></span>
+								</label> 동의합니다.
+								<label class="btn btn-default">
+								<input type="radio" class="emailReceiveYn" name="emailReceiveYn" value="N" autocomplete="off">
+								<span class="fa fa-check"></span>
+								</label> 동의하지 않습니다.
 							</div>
 						</div><br>
 						
 						<div class="form-group">
 							<label class="col-sm-3 control-label" for="inputPhoneNumber" >SMS 수신여부</label>
-							<div class="col-sm-4">
-								<label class="radio-inline">
-								<input type="radio" id="smsReceiveYn" name="smsReceiveYn" value="Y" checked>동의합니다.
-								</label>
-								<label class="radio-inline"> <input type="radio" id="smsReceiveYn" name="smsReceiveYn" value="N"> 동의하지 않습니다.
-								</label>
+							
+							
+							<div class="col-sm-4" id="smsReceveYn" data-toggle="buttons">
+								<label class="btn btn-info active">
+								<input type="radio" class="smsReceiveYn" name="smsReceiveYn" value="Y" autocomplete="off">
+								<span class="fa fa-check"></span>
+								</label> 동의합니다.
+								<label class="btn btn-default">
+								<input type="radio" class="smsReceiveYn" name="smsReceiveYn" value="N" autocomplete="off"> 
+								<span class="fa fa-check"></span>
+								</label> 동의하지 않습니다.
 							</div>
 						</div><br>
 
@@ -329,7 +317,7 @@
 						<div class="form-group">
 							<label class="col-sm-3 control-label" for="inputAgree">약관 동의</label>
 							<div class="col-sm-6" data-toggle="buttons">
-								<label class="btn btn-warning active">
+								<label class="btn btn-warning" id="terms">
 								<input id="agree" type="checkbox" autocomplete="off">
 								<span class="fa fa-check"></span>
 								</label> <a href="#">이용약관</a> 에 동의 합니다.
@@ -339,12 +327,12 @@
 						
 						<div class="form-group">
 							<div class="col-sm-12 text-center">
-								<button class="btn btn-primary" type="submit">
+								<button class="btn btn-primary" >
 									회원가입<i class="fa fa-check spaceLeft"></i>
 								</button>
-								<button class="btn btn-danger" type="submit">
+								<a class="btn btn-danger" href="/custombeauty/main">
 									가입취소<i class="fa fa-times spaceLeft"></i>
-								</button>
+								</a>
 							</div>
 						</div>
 					</form>
@@ -399,11 +387,36 @@
 		});
 
 		$(".onlyNumber").keyup(function(event) {
-			if (!(event.keyCode >= 37 && event.keyCode <= 40)) {
-				var inputVal = $(this).val();
-				$(this).val(inputVal.replace(/[^0-9]/gi, ''));
-			}
-		});
+	         if (!(event.keyCode >= 37 && event.keyCode <= 40)) {
+	            var inputVal = $(this).val();
+	            inputVal = inputVal.replace(/[^0-9]/g, '');
+	            var tmp = '';
+	            
+	            if( inputVal.length < 4){
+	               return $(this).val(inputVal);
+	            }else if(inputVal.length < 7){
+	               tmp += inputVal.substr(0, 3);
+	               tmp += '-';
+	               tmp += inputVal.substr(3);
+	               return $(this).val(tmp);
+	            }else if(inputVal.length < 11){
+	               tmp += inputVal.substr(0, 3);
+	               tmp += '-';
+	               tmp += inputVal.substr(3, 3);
+	               tmp += '-';
+	               tmp += inputVal.substr(6);
+	               return $(this).val(tmp);
+	            }else{            
+	               tmp += inputVal.substr(0, 3);
+	               tmp += '-';
+	               tmp += inputVal.substr(3, 4);
+	               tmp += '-';
+	               tmp += inputVal.substr(7);
+	               return $(this).val(tmp);
+	            }
+	         }
+	         
+	      });
 
 		//------- 검사하여 상태를 class에 적용
 		$('#inputName').keyup(function(event) {
@@ -515,8 +528,15 @@
 		});
 	
 		
-		/* validation 검사   */
+		
+		
+		
+		
+		
+		/* validation 검사 & submit   */
 		$("#join-form").submit(function() {
+			
+		
 			if ($("#inputName").val() == "") {
 				alert("이름은 필수 입력 항목입니다.");
 				$("#inputName").focus()
@@ -567,29 +587,81 @@
 				$("#inputNumber").focus()
 				return false;
 			}
-			if($("#emailReceiveYn").is(":checked")==false ){
-				alert ("약관동의가 필요합니다.");
-				
+			if($("#conCheckId").val()=="0" ){
+				alert ("아이디 중복확인이 필요합니다.");
 				return false;
 				}
+			if($("#terms").attr('class') != "btn btn-warning active"){
+				alert ("약관동의가 필요합니다.");
+				return false;
 			
-			
-			if($("#agree-prov").is(":checked")==false ){
-			alert ("약관동의가 필요합니다.");
-			
-			return false;
 			}
 
-			//아이디 중복체크했는지도!
-			alert("회원가입에 성공하였습니다.");
-			return true;
+			/* 아니라면 아작스 통신으로 데이터 보내기!  */
+			 	var name =	$("#inputName").val();
+				var id =	$("#inputId").val();
+				var password =	$("#inputPassword").val()
+				var email1 =	$("#inputEmail1").val()
+				var email2 =	$("#inputEmail2").val()
+				var zipCode = 	$("#sample6_postcode").val()
+				var address1 =	$("#sample6_address").val()
+				var address2 =	$("#sample6_address2").val()
+				var phone =		$("#inputNumber").val() 
+				//인증번호	
+				var agrEmail =	$(".emailReceiveYn:checked").val();
+				var agrMessage =$(".smsReceiveYn:checked").val();
+				
+				var userVo ={
+						"name":		 name,
+						"id":		 id,
+						"password":  password,
+						"email1":	 email1,
+						"email2":	 email2,
+						"zipCode":	 zipCode,
+						"address1":	 address1,
+						"address2":	 address2,
+						"phone":	 phone,
+						"agrEmail":	 agrEmail,
+						"agrMessage":agrMessage
+						
+					};
 
+					$.ajax({// 비동기식 
+						url : "join",
+						type : "POST",
+						data:JSON.stringify(userVo),
+						contentType:"application/json",
+						success : function(a) {
+							console.log(a);
+							
+							if (a == 1) {
+								alert("회원가입에 성공하였습니다.");
+								return true;
+							}
+
+							/*  if($("#inputId").val()==null){
+							  $("#inputId").val("").focus();
+							 } */
+							else {
+								alert("님은 회원가입안됨 ㅋ");
+								return false;
+								
+							}
+						},
+						error : function(jqXHR, status, error) {
+							console.error(status + ":" + error);
+							
+						}
+					});
+			/////////////////////////////////////////////////////////////
 		});
 
 		
 
 		/* id중복체크  */
 		$("#inputId").change(function() {
+			$("#conCheckId").val('0');
+		});
 			//승인안됨 
 			$("#checkId").on("click", function() {
 				var id = $("#inputId").val();
@@ -606,7 +678,7 @@
 						if (check == "exists") {
 							alert("이미 존재하는 아이디 입니다.");
 							$("#inputId").val("").focus();
-							// fail 에 대한
+							$("#conCheckId").val('0');
 						}
 
 						/*  if($("#inputId").val()==null){
@@ -614,7 +686,7 @@
 						 } */
 						else {
 							alert("사용 가능한 아이디입니다..");
-							//승인된
+							$("#conCheckId").val('1');
 						}
 					},
 					error : function(jqXHR, status, error) {
@@ -622,19 +694,7 @@
 					}
 				});
 
-			});
-		});
-		
-		
-	/* 	$("#email_select").change(function() { 
-			console.log($("#email_select").val());
-		
-		});
-		 */
-		
-
-		
-		
+			});	
 
 	});
 
@@ -649,11 +709,6 @@
 
 		return true;
 	}
-
-	$(function() { // 다썼는지 체크하기! 빠진 항목없는지..
-		
-
-	});
 </script>
 
 

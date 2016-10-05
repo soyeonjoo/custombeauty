@@ -47,9 +47,10 @@ public class UserDao {
 	
 	}
 
-	public void insert(UserVo vo) {// 회원가입
-		sqlSession.insert("user.insert",vo);
-
+	public int insert(UserVo vo) {// 회원가입
+	 int a = sqlSession.insert("user.insert",vo);
+	 System.out.println(a);
+	 return a; //요거 아직 확인안함 service에도 써야함 
 	}
 	
 	

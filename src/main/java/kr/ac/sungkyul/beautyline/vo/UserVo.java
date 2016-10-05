@@ -12,8 +12,6 @@ public class UserVo {
 	
 	
 	private String phone;
-	private Long ageEmail;
-	private Long ageMessage;
 	private String isAdmin;
 
 	private String zipCode;
@@ -21,6 +19,9 @@ public class UserVo {
 	private String address2;
 	private String email1;
 	private String email2;
+	
+	private String agrEmail;
+	private String agrMessage;
 	
 	public Long getNo() {
 		return no;
@@ -57,18 +58,6 @@ public class UserVo {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	public Long getAgeEmail() {
-		return ageEmail;
-	}
-	public void setAgeEmail(Long ageEmail) {
-		this.ageEmail = ageEmail;
-	}
-	public Long getAgeMessage() {
-		return ageMessage;
-	}
-	public void setAgeMessage(Long ageMessage) {
-		this.ageMessage = ageMessage;
 	}
 	public String getIsAdmin() {
 		return isAdmin;
@@ -113,14 +102,26 @@ public class UserVo {
 	public void setEmail2(String email2) {
 		this.email2 = email2;
 	}
+	public String getAgrEmail() {
+		return agrEmail;
+	}
+	public void setAgrEmail(String agrEmail) {
+		this.agrEmail = agrEmail;
+	}
+	public String getAgrMessage() {
+		return agrMessage;
+	}
+	public void setAgrMessage(String agrMessage) {
+		this.agrMessage = agrMessage;
+	}
 	@Override
 	public String toString() {
 		return "UserVo [no=" + no + ", name=" + name + ", id=" + id + ", password=" + password + ", email=" + email
-				+ ", address=" + address + ", phone=" + phone + ", ageEmail=" + ageEmail + ", ageMessage=" + ageMessage
-				+ ", isAdmin=" + isAdmin + ", zipCode=" + zipCode + ", address1=" + address1 + ", address2=" + address2
-				+ ", email1=" + email1 + ", email2=" + email2 + "]";
+				+ ", address=" + address + ", phone=" + phone + ", isAdmin=" + isAdmin + ", zipCode=" + zipCode
+				+ ", address1=" + address1 + ", address2=" + address2 + ", email1=" + email1 + ", email2=" + email2
+				+ ", agrEmail=" + agrEmail + ", agrMessage=" + agrMessage + "]";
 	}
-
+	
 	
 
 	
