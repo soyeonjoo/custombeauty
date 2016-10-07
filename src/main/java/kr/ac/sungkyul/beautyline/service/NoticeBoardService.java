@@ -22,32 +22,66 @@ public class NoticeBoardService {
 		return list;	
 	}
 	
-	
-	
-	
-	
-	
-	
-	/* 공지사항 글쓰기 */
-	public void write(NoticeBoardVo vo) {
+public void write(NoticeBoardVo vo)throws Exception {
+		
 		vo.setTitle("["+vo.getCategory()+"]"+vo.getTitle()); //카테고리와 제목 합치기
-		nBoardDao.insertBoard(vo);
+		 nBoardDao.insertBoard(vo); // board no 가져오기
+}
+	
+	/* 공지사항 글쓰기 
+	public void write(NoticeBoardVo vo, MultipartFile file )throws Exception {
+		
+		vo.setTitle("["+vo.getCategory()+"]"+vo.getTitle()); //카테고리와 제목 합치기
+		Long noticeNo = nBoardDao.insertBoard(vo); // board no 가져오기
+		
+		/*
+		//2. orgName
+		String orgName =file.getOriginalFilename();
+			
+		//4. fileSize 리사이징할때 
+		//long fileSize = file.getSize();
+			
+		//5. saveName
+		String saveName = UUID.randomUUID().toString()+"_"+orgName;
+			
+		//6. path
+		String path = "c:\\Users\\S401-11\\Downloads\\filestore";
+		FileNotiVo noticeFile = new FileNotiVo();
+		
+		noticeFile.setNoticeNo(noticeNo);
+		noticeFile.setOrgName(orgName);
+		noticeFile.setPath(path);
+		noticeFile.setSaveName(saveName);
+		nBoardDao.insertAttachFile(noticeFile);
+				
+		File target = new File(path, saveName);
+		FileCopyUtils.copy(file.getBytes(), target);
+	}
+	*/
+	/* 공지사항 글 보기 */
+	public NoticeBoardVo view( int no ){
+		return nBoardDao.viewBoard(no);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
 
+	/* 공지사항 글 조회수 업뎃 */
+	public void updateViewCount( int no ){
+		nBoardDao.updateViewCount(no);
+	}
 	
+	/* 공지사항 글 삭제 */
+	public int delete( int no ){
+		 return nBoardDao.delete(no);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	}
 
 
 
